@@ -9,16 +9,14 @@ class Calculator extends Component {
     this.var1ref = React.createRef();
     this.var2ref = React.createRef();
     this.answerRef = React.createRef()
-    this.state = {var1focus: false, var2focus:false}
+    this.state = {var1focus: false, var2focus:false, opr: "+"}
   }
 
   changeState = event => {
-    if (event.target.id=='var1') {
-      this.state.var1focus = true;
-      this.state.var2focus = false;
+    if (event.target.id==='var1') {
+      this.setState({var1focus:true, var2focus:false})
     } else {
-      this.state.var1focus = false;
-      this.state.var2focus = true;
+      this.setState({var1focus:false, var2focus:true})
     }
   }
 
@@ -32,8 +30,33 @@ class Calculator extends Component {
   }
 
   caclAnswer = event => {
+    if (this.state.opr === '+'){
       this.answerRef.current.value = parseInt(this.var1ref.current.value) + parseInt(this.var2ref.current.value)
+    } else if (this.state.opr === '-') {
+      this.answerRef.current.value = parseInt(this.var1ref.current.value) - parseInt(this.var2ref.current.value)
+    } else if (this.state.opr === '*'){
+      this.answerRef.current.value = parseInt(this.var1ref.current.value) * parseInt(this.var2ref.current.value)
+    } else if (this.state.opr === '/') {
+      this.answerRef.current.value = parseInt(this.var1ref.current.value) / parseInt(this.var2ref.current.value)
+    }
 
+
+  }
+
+  setOperation = event => {
+    this.setState({opr: event.target.value})
+  }
+
+  backSpace = event => {
+    if (this.state.var2focus) {
+      this.var2ref.current.value = this.var2ref.current.value.slice(0, -1)
+    } else  {
+      this.var1ref.current.value = this.var1ref.current.value.slice(0, -1)
+    }
+  }
+
+  clean = event => {
+    this.state.var2focus ? this.var2ref.current.value = "" : this.var1ref.current.value = "";
   }
 
   render() {
@@ -43,7 +66,7 @@ class Calculator extends Component {
         <input type="text" id="var1" ref={this.var1ref} onFocus={this.changeState}/>
         <input type="text" id='var2' ref={this.var2ref} onFocus={this.changeState}/><br />
         <input type="text" ref={this.answerRef}/><button onClick={this.caclAnswer}>Сalculate</button>
-        <fieldset>
+        <fieldset onChange={this.setOperation}>
           <legend>Operation</legend>
           <input type="radio" name='opr' value='+' id="add" /><label for='add' >+ </label><br />
           <input type="radio" name='opr' value='-' id="sub" /><label for='sub' > - </label><br />
@@ -68,9 +91,9 @@ class Calculator extends Component {
             <td><button value="9" onClick={this.writeDigit}>9</button></td>
           </tr>
           <tr>
-            <td><button>&lt;</button></td>
+            <td><button onClick={this.backSpace}>&lt;</button></td>
             <td><button value="0" onClick={this.writeDigit}>0</button></td>
-            <td><button>c</button></td>
+            <td><button onClick={this.clean}>c</button></td>
           </tr>
         </table>
       </React.Fragment>
