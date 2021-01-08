@@ -11,7 +11,10 @@ function App() {
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
-      <h1>Calculator</h1>
+      <nav>
+        <h1 class="site-title">Calculator</h1>
+      </nav>
+
       <Calculator />
     </div>
   );

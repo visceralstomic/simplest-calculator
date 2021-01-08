@@ -1,38 +1,80 @@
+ html {
+   background-color:  #041315;
+ }
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  height: 100%;
+  width: 190px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #08272b;
+  overflow-x: hidden;
+  padding-top: 10px;
+}
+.main-area {
+  padding-top: 35px;
+  margin-left: 210px;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.site-title {
+  color: #C9FFE2;
+  font-size: 35px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.calc-area {
+  margin-top: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.calculator {
+  margin-top: 15px;
+  float: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table {
+  border-collapse: collapse;
+}
+
+.opr-area {
+  margin-left: 5px;
+  float:left;
+  background-color: #08272b;
+  padding: 10px 10px;
+  font-size: 20px;
+}
+.operations {
+  background-color: #08272b;
+  border: 1px solid #041315;
+  color: #fff;
+}
+
+
+legend {
+  background-color: #041315;
+  padding: 10px 10px;
+  color: #C9FFE2;
+}
+
+
+
+.fix:before,
+.fix:after{
+  content: "";
+  display: table;
+
+}
+.fix:after {
+    clear:both;
+}
+
+.fix {
+  zoom: 1;
 }
