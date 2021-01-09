@@ -107,8 +107,10 @@ class Calculator extends Component {
 
           <div class='input-area'>
             <input type="text" id="var1" ref={this.var1ref} onKeyPress={this.prevLett} onFocus={this.changeState}/>
-            <input type="text" id='var2' ref={this.var2ref} onKeyPress={this.prevLett} onFocus={this.changeState}/><br />
-            <input  type="text" ref={this.answerRef} readOnly/><button onClick={this.caclAnswer}>Сalculate</button>
+            <input type="text" id='var2' ref={this.var2ref} onKeyPress={this.prevLett} onFocus={this.changeState}/>
+            <div class='output-area'>
+              <input  type="text" ref={this.answerRef} readOnly/><button onClick={this.caclAnswer}>Сalculate</button>
+            </div>
           </div>
 
           <div class='calc-area fix'>
