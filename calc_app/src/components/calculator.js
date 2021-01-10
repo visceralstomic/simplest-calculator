@@ -140,10 +140,10 @@ class Calculator extends Component {
             <div class='opr-area'>
               <fieldset class='operations' onChange={this.setOperation}>
                 <legend>Operation</legend>
-                <input type="radio" name='opr' value='+' id="add" /><label for='add' >+ </label><br />
-                <input type="radio" name='opr' value='-' id="sub" /><label for='sub' > - </label><br />
-                <input type="radio" name='opr' value='*' id="mult"/><label for='mult'> * </label><br />
-                <input type="radio" name='opr' value='/' id="div" /><label for='div' > / </label>
+                <input type="radio" name='opr' value='+' id="add" /><label for='add' > add </label><br />
+                <input type="radio" name='opr' value='-' id="sub" /><label for='sub' > sub </label><br />
+                <input type="radio" name='opr' value='*' id="mult"/><label for='mult'> mult</label><br />
+                <input type="radio" name='opr' value='/' id="div" /><label for='div' > div </label>
               </fieldset>
             </div>
 

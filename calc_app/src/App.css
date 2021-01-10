@@ -87,7 +87,7 @@ button:active {
   transform: scale(0.95);
 }
 
-
+/* Operations block */
 
 .opr-area {
   margin-left: 5px;
@@ -105,6 +105,7 @@ button:active {
   border: 1px solid #041315;
   color: #C9FFE2;
   border-radius: inherit;
+  text-align: justify;
 
 }
 
@@ -114,7 +115,65 @@ legend {
   border-radius: inherit;
 }
 
+/* Operations input block */
+.operations label {
+  margin: 3px 0 3px 5px;
+  padding-left: 4px;
+  padding-right: 5px;
+  text-align: center;
+  width: 80px;
+  display: inline-block;
+  border: 1px solid #08272b;
+  border-radius: 10px;
+  transition: border 300ms ease-in;
 
+}
+
+.operations input[type="radio"] {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #C9FFE2;
+  border-radius: 50%;
+  outline: none;
+  background: #041315;
+  transition: transform 300ms ease-in;
+
+}
+
+.operations input[type="radio"]:hover {
+  transform: scale(1.3);
+}
+
+.operations input[type="radio"]:hover+label {
+  border: 1px solid #C9FFE2;
+
+}
+
+.operations input[type="radio"]::before {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin: 25% auto;
+  border-radius: 50%;
+}
+
+.operations input[type="radio"]:checked::before {
+  background: #C9FFE2;
+}
+.operations input[type="radio"]:checked+label{
+  background:  #C9FFE2;
+  color: #041315;
+  border-radius: 10px;
+
+
+}
+
+/* Operations input block end */
+
+
+/* Operations block end*/
 
 .fix:before,
 .fix:after{
